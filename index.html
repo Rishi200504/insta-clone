@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Instagram</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            scrollbar-width: none;
+        }
+
+        .container {
+            width: 100dvw;
+            min-height: 100dvh;
+            background-color: rgb(41, 39, 39);
+        }
+
+        .left {
+            width: 15dvw;
+            height: 100dvh;
+            background-color: black;
+            position: fixed;
+        }
+
+        .insta {
+            width: 100%;
+            height: 18%;
+            background-color: black;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .img {
+            /* height: 100%; */
+            width: 100%;
+        }
+
+        .side {
+            width: 100%;
+            height: 6%;
+            background-color: black;
+            margin-top: 15px;
+            display: flex;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+
+        .side:hover {
+            background-color: rgba(92, 88, 88, 0.61);
+        }
+
+        .icon {
+            width: 30%;
+            height: 100%;
+            background-color: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            color: white;
+        }
+
+        .text {
+            width: 70%;
+            height: 100%;
+            background-color: none;
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+            font-size: 40px;
+            color: white;
+        }
+
+        .side .text {
+            font-size: 35px;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-weight: 500;
+
+        }
+
+        .extra {
+            width: 100%;
+            height: 30dvh;
+            background-color: black;
+            margin-top: 10px;
+        }
+
+        .menu {
+            width: 100%;
+            height: 22%;
+            background-color: black;
+            margin-top: 10px;
+            justify-content: space-evenly;
+            display: flex;
+            cursor: pointer;
+        }
+
+        .menu:hover {
+            background-color: rgba(92, 88, 88, 0.61);
+        }
+
+        .icon1 {
+            height: 100%;
+            width: 30%;
+            background-color: black;
+            font-size: 55px;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            color: white;
+        }
+
+        .icon2 {
+            height: 100%;
+            width: 30%;
+            background-color: black;
+            font-size: 55px;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            color: blue;
+        }
+
+        .ss {
+            height: 100%;
+            width: 70%;
+            background-color: black;
+            font-size: 30px;
+            align-items: center;
+            display: flex;
+            color: white;
+        }
+
+        .right {
+            width: 85dvw;
+            min-height: 100dvh;
+            background-color: aqua;
+            float: right;
+            display: flex;
+        }
+
+        .g1 {
+            width: 75%;
+            height: 100dvh;
+            background-color: rgb(20, 20, 20);
+            overflow: scroll;
+            scrollbar-width: none;
+        }
+
+        .high {
+            width: 100%;
+            height: 13dvh;
+            background-color: rgba(0, 0, 0, 0.948);
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            padding: 20px;
+            overflow: scroll;
+            gap: 30px;
+            flex-wrap: wrap;
+            scrollbar-width: none;
+        }
+
+        .circle {
+            border: 5px solid rgb(170, 87, 29);
+            width: 160px;
+            height: 160px;
+            border-radius: 80px;
+            cursor: pointer;
+            align-items: center;
+        }
+
+        .img {
+            width: 100%;
+            height: 100%;
+            border-radius: 80px;
+        }
+
+        .circle:hover {
+            transition: 0.1s ease-out;
+
+        }
+
+        .box {
+            width: 100%;
+            min-height: 100%;
+            background-color: rgba(0, 0, 0, 0.911);
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .inner {
+            width: 30dvw;
+            min-height: 60dvh;
+            background-color: rgb(9, 9, 9);
+            margin: 10px;
+        }
+
+        .varsha {
+            width: 100%;
+
+        }
+
+        .g2 {
+            width: 25%;
+            min-height: 50dvh;
+            background-color: black;
+            top: 0;
+            right: 0;
+        }
+
+        .black {
+            width: 100%;
+            height: 55%;
+            background-color: black
+        }
+
+        .chats {
+            width: 100%;
+            height: 15%;
+            background-color: rgb(13, 13, 12);
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .h {
+            width: 20%;
+            height: 100%;
+            background-color: black;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            font-size: 80px;
+            color: white;
+        }
+
+        .p {
+            width: 60%;
+            height: 100%;
+            background-color: black;
+            font-size: 28px;
+            display: flex;
+            align-items: center;
+            color: white;
+
+
+        }
+
+        .div {
+            width: 25%;
+            height: 100%;
+            background-color: black;
+            font-size: 28px;
+            display: flex;
+            align-items: center;
+            color: blue;
+            justify-content: end;
+            cursor: pointer;
+        }
+
+        .sugg {
+            width: 100%;
+            height: 8%;
+            background-color: black;
+            color: rgb(159, 182, 182);
+            margin-top: 10px;
+            justify-content: space-between;
+            display: flex;
+            font-size: 30px;
+            align-items: center;
+        }
+
+        .pp {
+            width: 100%;
+            height: 15%;
+            background-color: black;
+            margin-top: 15px;
+            display: flex;
+            cursor: pointer;
+            color: white;
+        }
+
+        .sare {
+            width: 80%;
+            height: 80%;
+            background-color: rgb(18, 18, 18);
+            border-radius: 50%;
+        }
+
+        .lo {
+            width: 100%;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="insta">
+                <img src="insta.png" class="img">
+            </div>
+            <div class="side">
+                <div class="icon">
+                    <i class="fa-solid fa-house"></i>
+                </div>
+                <div class="text">Home</div>
+            </div>
+            <div class="side">
+                <div class="icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div class="text">Search</div>
+            </div>
+            <div class="side">
+                <div class="icon">
+                    <i class="fa-regular fa-compass"></i>
+                </div>
+                <div class="text">Explore</div>
+            </div>
+            <div class="side">
+                <div class="icon">
+                    <i class="fa-solid fa-clapperboard"></i>
+                </div>
+                <div class="text">Reels</div>
+            </div>
+            <div class="side">
+                <div class="icon">
+                    <i class="fa-regular fa-paper-plane"></i>
+                </div>
+                <div class="text">Messages</div>
+            </div>
+            <div class="side">
+                <div class="icon">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="text">Notifications</div>
+            </div>
+            <div class="side">
+                <div class="icon">
+                    <i class="fa-regular fa-square-plus"></i>
+                </div>
+                <div class="text">Create</div>
+            </div>
+            <div class="side">
+                <div class="icon">
+                    <i class="fa-solid fa-circle-user"></i>
+                </div>
+                <div class="text">Profile</div>
+            </div>
+            <div class="side">
+                <div class="icon">
+
+                </div>
+
+            </div>
+
+            <div class="extra">
+                <div class="menu">
+                    <div class="icon1">
+                        <i class="fa-solid fa-bars"></i>
+
+                    </div>
+                    <div class="ss">Menu</div>
+                </div>
+                <div class="menu">
+                    <div class="icon2">
+                        <i class="fa-regular fa-circle"></i>
+                    </div>
+                    <div class="ss">Ask from Meta</div>
+
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="g1">
+                <div class="high">
+                    <div class="circle">
+                        <img src="me.png" class="img">
+                    </div>
+                    <div class="circle">
+                        <img src="me.png" class="img">
+                    </div>
+                    <div class="circle">
+                        <img src="me.png" class="img">
+                    </div>
+                    <div class="circle">
+                        <img src="me.png" class="img">
+                    </div>
+                    <div class="circle">
+                        <img src="me.png" class="img">
+                    </div>
+                    <div class="circle">
+                        <img src="me.png" class="img">
+                    </div>
+                    <div class="circle">
+                        <img src="me.png" class="img">
+                    </div>
+                    <div class="circle">
+                        <img src="me.png" class="img">
+                    </div>
+                    <div class="circle">
+                        <img src="me.png" class="img">
+                    </div>
+                    <div class="circle">
+                        <img src="me.png" class="img">
+                    </div>
+                    <div class="circle">
+                        <img src="me.png" class="img">
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="inner">
+                        <img src="reel.png" class="varsha">
+                    </div>
+                    <div class="inner">
+                        <img src="croc.png" class="varsha">
+                    </div>
+                    <div class="inner">
+                        <img src="bean.png" class="varsha">
+                    </div>
+                </div>
+            </div>
+            <div class="g2">
+                <div class="black">
+                    <div class="chats">
+                        <div class="h">
+                            <i class="fa-solid fa-circle-user" class="ram"></i>
+                        </div>
+                        <div class="p">
+                            <p>rishiiiiiiii</p>
+                        </div>
+                        <div class="div">
+                            <p>switch</p>
+                        </div>
+                    </div>
+                    <div class="sugg">
+                        <p>Suggestions for you</p>
+                        <p>Sell all</p>
+                    </div>
+                    <div class="pp">
+                        <div class="h">
+                            <div class="sare">
+                                <img class="lo" src="f1.png">
+                            </div>
+                        </div>
+                        <div class="p">momi_sara_512</div>
+                        <div class="div">+Follow</div>
+                    </div>
+                    <div class="pp">
+                        <div class="h">
+                            <div class="sare">
+                                <img class=lo src="mb.png">
+                            </div>
+                        </div>
+                        <div class="p">urstrulymahesh</div>
+                        <div class="div">+Follow</div>
+                    </div>
+                    <div class="pp">
+                        <div class="h">
+                            <div class="sare">
+                                <img class="lo" src="mir.png">
+                            </div>
+                        </div>
+                        <div class="p">miriyala_ram</div>
+                        <div class="div">+Follow</div>
+                    </div>
+                    <div class="pp">
+                        <div class="h">
+                            <div class="sare">
+                                <img class="lo" src="mir.png">
+                            </div>
+                        </div>
+                        <div class="p">miriyala_ram</div>
+                        <div class="div">+Follow</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
